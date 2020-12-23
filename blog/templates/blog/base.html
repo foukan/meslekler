@@ -1,0 +1,58 @@
+{% load static %}
+
+<html>
+
+<head>
+    <title>Meslekler</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Special+Elite&display=swap"
+        rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/s.css' %}">
+</head>
+
+<body>
+    <!--Nav-->
+    <div class="page-header">  
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Yeni Post</a>
+        {% endif %}
+    </div>
+    <!--End-Nav-->
+
+    <!--First look-->
+    <main class="front-first">
+        <h1><a href="/">Meslek Alemi</a></h1>
+        <!--search area-->
+
+        <div class="search-box">
+
+            <button type="submit">
+                <i class="fa  fa-search">
+                    <input class="box" type="text" placeholder="Ara" name="search">
+                </i>
+            </button>
+        </div>
+
+        <!--search area-->
+    </main>
+    <!--End-First look-->
+
+    <section class="  mt">
+        <div class="row">
+            <div class="col-md-3"></div>
+
+            <div class="col-md-6">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div class="col-md-3"></div>
+            
+        </div>
+    </section>
+</body>
+
+</html>

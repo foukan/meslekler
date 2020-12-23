@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="date">
+    <p> 
+        {{ post.published_date }} Tarihinde -
+       <span class="author-span"> {{post.author.first_name}} 
+         {{post.author.last_name}}</span> tarafından yazıldı.
+    </p>
+</div>
+<br>
+<div class="post ">
+    <div class="post-card">
+        <h1><a class="title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+        <p id="yaz">{{ post.text|safe|truncatechars:"500"}}</p>
+    </div>
+
+</div>
+{% endfor %}
+{% endblock %}
