@@ -2,11 +2,11 @@
 {% block title %}Düzenle{% endblock %}
 
 {% block content %}
-    <h1>Düzenle</h1>
+    <h1 id="baslik">Düzenle</h1>
     <form method="POST" class="post-form">
         {% csrf_token %}
         {{ form.media}}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Kaydet</button>
+        <button type="submit" class="save btn btn-lg btn-primary ">Kaydet</button>
     </form>
 {% endblock %}

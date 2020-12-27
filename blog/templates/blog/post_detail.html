@@ -21,11 +21,54 @@
     <hr>
     <div class="post">
         {% if post.published_date %}
-
         {% endif %}
         <p id="yaz">{{ post.text|safe }}</p>
     </div>
 
+    <!--Comments-->
+    <div class="comments mb mt">
+
+        <hr>
+        <h2>YORUMLAR</h2>
+       
+
+        {% for comment in post.comments.all %}
+        {% if user.is_authenticated or comment.approved_comment %}
+        <div class="comment-in-comments">
+            <div class="date">
+                {{ comment.created_date }}
+                {% if not comment.approved_comment %}
+                    <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                {% endif %}
+            </div>
+            <strong>{{ comment.author }}</strong>
+            <p>{{ comment.text|linebreaks }}</p>
+            <hr>
+        </div>
+        {% endif %}
+        
+    {% empty %}
+        <p>No comments here yet :(</p>
+
+        
+    {% endfor %}
+
+
+    <div class="Yorum-yap">
+        <a href="{% url 'add_comment_to_post' pk=post.pk %}"  class="animated-button thar-one"> + Yorum Ekle</a>
+    </div> 
+
+    </div>
+    <!--End-Comments-->
 
 </div>
+
+
+
 {% endblock %}
+
+
+
+
+

@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 
     #my apps
     'blog',
-    'members',
 
     #3. party apps
     'ckeditor',
@@ -62,7 +61,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR + "/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,8 +128,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'font-size': 18,
         'toolbar': 'full',
-        'height':1200,
-        'width': 1100,
+        'height':500,
+        'width': 1000,
     },
 }
