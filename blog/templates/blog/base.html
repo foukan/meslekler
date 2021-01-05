@@ -14,14 +14,6 @@
 </head>
 
 <body>
-    <!--Nav-->
-    <div class="page-header">  
-        {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Yeni Post</a>
-        {% endif %}
-    </div>
-    <!--End-Nav-->
-
     <!--First look-->
     <main class="front-first">
         <h1><a href="/">Meslek Alemi</a></h1>
@@ -37,6 +29,16 @@
         </div>
 
         <!--search area-->
+
+        <!--Nav-->
+        <div class="page-header ">
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Yeni Post</a>
+            {% endif %}
+            <h4>Yazılara göz atmak için sayfayı sürükle</h4>
+        </div>
+        <!--End-Nav-->
+
     </main>
     <!--End-First look-->
 
@@ -50,7 +52,7 @@
             </div>
 
             <div class="col-md-3"></div>
-            
+
         </div>
     </section>
 

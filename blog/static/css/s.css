@@ -1,23 +1,11 @@
-.front-first h1 {
-    font-size: 38pt;
-    font-family: 'Fredericka the Great' ;
-    margin: 0 ;
-    padding: 12rem 0 6rem 0;
-    text-align: center;
-    background-color:  #3e4957;
-}
 
-.front-first h1 a {
-    color: #ffffff;
-    text-decoration: none;
-}
 
 .search-box { 
     padding: 3rem 0rem 12rem 0rem;
     display: flex;
     background-color: #3e4957;
     justify-content: center;
-    box-shadow: 0px 5px 3px -3px #1f1c1cf5;
+   
 }
 
 .search-box .box {

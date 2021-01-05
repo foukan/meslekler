@@ -1,12 +1,15 @@
 {% extends 'blog/base.html' %}
-{% block title %}Yorum ekle{% endblock %}
 
-{% block content %}
+    {% block title %}Yorum ekle{% endblock %}
+
+    {% block content %}
     <h1 id="baslik">Yorum Ekle</h1>
     <form method="POST" class="post-form">
         {% csrf_token %}
         {{ form.as_p }}
-        
-            <button type="submit" class="save btn btn-lg btn-primary ">+ Yorum Ekle</button>
+
+        <button type="submit" class="save btn btn-lg btn-primary ">+ Yorum Ekle</button>
     </form>
-{% endblock %}
+    {% endblock %}
+
+

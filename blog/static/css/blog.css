@@ -1,6 +1,5 @@
 body{
-    background-color:#c5c5c5;
-    
+    background-color:#c5c5c5;  
 }
 
 ::-webkit-scrollbar {
@@ -12,12 +11,32 @@ hr{
     width: 100% !important;
     border-color: #3e4957 !important ;
 }
+.front-first{
+    background-color: #3e4957;
+    height: 100vh;
+    box-shadow: 0px 5px 3px -3px #1f1c1cf5;
+}
+
+.front-first h1 {
+    font-size: 38pt;
+    font-family: 'Fredericka the Great' ;
+    margin-top: 0 ;
+    padding: 25rem 0 6rem 0;
+    text-align: center;
+    background-color:  #3e4957;
+}
+
+.front-first h1 a {
+    color: #ffffff;
+    text-decoration: none;
+}
 
 
 .page-header {
+    color: #ffffff;
     display: flex;
     background-color: #3e4957;
-    margin-top: 0;
+    margin-top: 18rem;
     padding: 0rem 1rem 0rem 1rem;   
     margin-bottom: 0px;
     border-bottom: none !important; 
@@ -166,11 +185,6 @@ hr{
     color: #2b2b2b;
     padding:2rem;
 }
-
-
-
-
-
 
 
 /* Yorum  genel Styles */
